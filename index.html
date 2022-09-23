@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is a Frontend Mentor Challenge, Interactive card details form">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <main>
+    <div class="card">
+      <picture class="card__front">
+        <img src="./images/bg-card-front.png" alt="Front Card" width="447" height="245">
+        <img src="./images/card-logo.svg" alt="Card Logo" width="84" height="47">
+        <h2 class="card__holder-number">0000 0000 0000 0000</h2>
+        <h1 class="card__holder-name">Jane Appleseed</h1>
+        <p class="card__exp">00/00</p>
+      </picture>
+      <picture class="card__front">
+        <img src="./images/bg-card-back.png" alt="Back Card" width="447" height="245">
+        <p class="card__cvc">000</p>
+      </picture>
+    </div>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <form class="form">
+      <label for="cardholder-name">cardholder name
+        <input type="text" name="cardholder-name" id="cardholder-name" placeholder="e.g. Jane Appleseed">
+      </label>
+      <label for="card-number">card number
+        <input type="text" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+      </label>
+      <label for="card-exp-date">exp. date (mm/yy)
+        <input type="text" name="card-exp-date-month" id="card-exp-date" placeholder="MM">
+        <input type="text" name="card-exp-date-year" id="card-exp-date-year" placeholder="YY">
+      </label>
+      <label for="card-cvc">cvc
+        <input type="text" name="card-cvc" id="card-cvc" placeholder="e.g. 123">
+      </label>
+      <button type="submit" class="card-confirm btn-primary">Confirm</button>
+    </form>
 
-  000
+    <article class="thanks">
+      <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="40" fill="url(#a)" />
+        <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+        <defs>
+          <linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6348FE" />
+            <stop offset="1" stop-color="#610595" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <h2 class="thanks__title">Thank you!</h2>
+      <p class="thanks__description">We've added your card details</p>
+      <a href="/" class=" thanks-btn btn-primary">Continue</a>
+    </article>
+  </main>
 
-  Cardholder Name
-  e.g. Jane Appleseed
 
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://santiagolarae.github.io">SantiLara</a>.
+  </footer>
 </body>
+
 </html>
