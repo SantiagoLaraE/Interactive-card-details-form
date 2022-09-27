@@ -1,0 +1,292 @@
+:root {
+  --input-border: linear-gradient(
+    45deg,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+
+  --light-color: hsl(270, 3%, 87%);
+  --medium-color: hsl(279, 6%, 55%);
+  --dark-color: hsl(278, 68%, 11%);
+
+  --white-color: hsl(0, 0%, 100%);
+
+  --error-color: hsl(0, 100%, 66%);
+}
+* {
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  background-color: var(--white-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+body {
+  background: url(../images/bg-main-mobile.png) no-repeat;
+  background-color: var(--white-color);
+  background-size: 100% 30rem;
+  padding: 3.2rem 1.6rem 0;
+
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto min-content;
+}
+main {
+  max-width: 48rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ----- Card ----- */
+.card {
+  min-height: 25.2rem;
+  margin-bottom: 7.2rem;
+  position: relative;
+}
+.card__front,
+.card__back {
+  width: 28.5rem;
+  height: 15.621rem;
+  display: grid;
+  border-radius: 0.8rem;
+  box-shadow: 0 3.2rem 3.2rem rgba(0, 0, 0, 0.3);
+  color: var(--white-color);
+}
+.card__front {
+  background: url(../images/bg-card-front.png) center/cover no-repeat;
+  text-transform: uppercase;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  place-items: center flex-start;
+  position: absolute;
+  top: 12rem;
+  padding: 1.6rem 2rem 2.4rem;
+  animation: cardFront 1s ease .5s backwards;
+}
+@keyframes cardFront {
+    0%{
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+}
+.card__back {
+  margin-left: auto;
+  place-items: center flex-end;
+  padding-right: 3.2rem;
+  animation: cardBack 1s ease .5s backwards;
+}
+@keyframes cardBack {
+    0%{
+        opacity: 0;
+        transform: translateX(50%);
+    }
+}
+.card__cvc {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+}
+.card__logo {
+  width: 5.4rem;
+  height: auto;
+  grid-column: span 2;
+}
+.card__holder-number {
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  grid-column: span 2;
+}
+.card__holder-name,
+.card__exp-date {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+.card__exp-date {
+  place-self: flex-end;
+}
+.card__back {
+  background: url(../images/bg-card-back.png) center/cover no-repeat;
+}
+/* ----- Form ----- */
+.form {
+  color: var(--dark-color);
+  text-transform: uppercase;
+  display: grid;
+  gap: 1.8rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  opacity: 1;
+}
+.form.inactive{
+    position: absolute; 
+    opacity: 0;
+    visibility: hidden;
+}
+.cardholder-name,
+.card-number,
+.card-confirm {
+  grid-column: span 2;
+}
+.label-name {
+  display: block;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+.form__input {
+  width: 100%;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--medium-color);
+  font-size: 1.8rem;
+}
+.form__input::placeholder {
+  color: var(--light-color);
+}
+.card-exp-date {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card-exp-date .form__input {
+  width: 48%;
+}
+.btn-primary {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+  font-size: 1.8rem;
+  border: none;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.input__error{
+    color: var(--error-color);
+    font-size: 1.4rem;
+    text-transform: initial;
+    margin-top: 0.8rem;
+}
+
+/* ----- Thanks Section ----- */
+
+.thanks {
+    visibility: hidden;
+  text-align: center;
+  position: absolute;
+  transition: all .5s ease;
+  transform: scale(0);
+}
+.thanks.active{
+    visibility: initial;
+    position: initial;
+    transform: scale(1);
+}
+.thanks__title {
+  font-size: 3rem;
+  text-transform: uppercase;
+
+  margin: 3.2rem 0;
+}
+.thanks__description {
+  font-size: 1.8rem;
+  color: var(--medium-color);
+  margin-bottom: 4.8rem;
+}
+/* ----- Footer-Attribution ----- */
+
+.attribution {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 2.4rem 0;
+   mix-blend-mode:difference;
+   color: var(--white-color);
+}
+
+.attribution a {
+  color: inherit;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    min-height: 100vh;
+    background: url(../images/bg-main-desktop.png) no-repeat;
+    background-size: auto 100%;
+    display: grid;
+    grid-template-rows: auto min-content;
+    place-items: center;
+  }
+  main {
+    max-width: 111rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+  .card,
+  .form,
+  .thanks {
+    width: 100%;
+  }
+  .form, .thanks{
+    max-width: 43rem;
+  }
+  .form,
+  .thanks {
+    padding: 6.4rem;
+    max-width: 49rem;
+    gap: 2.8rem 1rem;
+  }
+  .card {
+    margin-bottom: 0;
+  }
+  .card__front,
+  .card__back {
+    width: 44.7rem;
+    height: 24.5rem;
+    display: grid;
+    border-radius: 0.8rem;
+    box-shadow: 0 3.2rem 3.2rem rgba(0, 0, 0, 0.3);
+    color: var(--white-color);
+  }
+  .card__front {
+    position: initial;
+    margin-bottom: 2.4rem;
+    padding: 2.8rem 3.2rem;
+  }
+  .card__back {
+    padding-right: 6rem;
+  }
+  .card__cvc {
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+  }
+  .card__logo {
+    width: initial;
+  }
+  .card__holder-number {
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+  }
+  .card__holder-name,
+  .card__exp-date {
+    font-size: 1.4rem;
+  }
+  .card__exp-date {
+    place-self: flex-end;
+  }
+}
