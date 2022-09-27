@@ -67,13 +67,14 @@ main {
 .card__front {
   background: url(../images/bg-card-front.png) center/cover no-repeat;
   text-transform: uppercase;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr min-content;
   grid-template-rows: min-content 1fr min-content;
   place-items: center flex-start;
   position: absolute;
   top: 12rem;
   padding: 1.6rem 2rem 2.4rem;
   animation: cardFront 1s ease .5s backwards;
+  z-index: 10;
 }
 @keyframes cardFront {
     0%{
@@ -153,6 +154,18 @@ main {
   border: 1px solid var(--medium-color);
   font-size: 1.8rem;
 }
+
+.form__input:hover, .form__input:focus {
+  border: 1px solid var(--input-border);
+  border: double 1px transparent;
+  border-radius: 6px;
+  background-image:  linear-gradient( white, white), var(--input-border);
+  background-clip: padding-box, border-box;
+  outline: none;
+}
+.form__input.error {
+  border: 1px solid var(--error-color);
+}
 .form__input::placeholder {
   color: var(--light-color);
 }
@@ -160,6 +173,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-content: flex-start;
 }
 .card-exp-date .form__input {
   width: 48%;
@@ -174,6 +188,14 @@ main {
   text-decoration: none;
   display: block;
   text-align: center;
+  cursor: pointer;
+  transition: transform .5s ease;
+}
+.btn-primary:hover {
+  transform: scale(0.95);
+}
+.btn-primary:active {
+  opacity: 0.8;
 }
 
 .input__error{
