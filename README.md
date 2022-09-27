@@ -1,4 +1,4 @@
-# Frontend Mentor - Notifications page solution
+# Frontend Mentor - Interactive card details form solution
 
 [Preview](https://santiagolarae.github.io/interactive-card-details-form/)
 
