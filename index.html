@@ -33,19 +33,19 @@
 
     <form class="form">
       <label class="cardholder-name" for="cardholder-name"><span class="label-name">cardholder name</span>
-        <input class="form__input" type="text" name="cardholder-name" id="cardholder-name" placeholder="e.g. Jane Appleseed">
+        <input class="form__input" type="text" name="cardholder-name" id="cardholder-name" data-min="5" data-max="30" placeholder="e.g. Jane Appleseed">
       </label>
       <label class="card-number" for="card-number"><span class="label-name">card number</span>
-        <input class="form__input" type="number" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+        <input class="form__input" type="number" name="card-number" id="card-number" data-min="16" data-max="16" placeholder="e.g. 1234 5678 9123 0000">
       </label>
       <label class="card-exp-date" for="card-exp-date"><span class="label-name">exp. date (mm/yy)</span>
-        <input class="form__input" type="number" name="card-exp-date-month" id="card-exp-date" placeholder="MM">
-        <input class="form__input" type="number" name="card-exp-date-year" id="card-exp-date-year" placeholder="YY">
+        <input class="form__input" type="number" name="card-exp-date-month" data-min="2" data-max="2" id="card-exp-date" placeholder="MM">
+        <input class="form__input" type="number" name="card-exp-date-year" data-min="2" data-max="2" id="card-exp-date-year" placeholder="YY">
       </label>
       <label class="card-cvc" for="card-cvc"><span class="label-name">cvc</span>
-        <input class="form__input" type="number" name="card-cvc" id="card-cvc" placeholder="e.g. 123">
+        <input class="form__input" type="number" name="card-cvc" id="card-cvc" data-min="3" data-max="3" placeholder="e.g. 123">
       </label>
-      <button type="submit" class="card-confirm btn-primary">Confirm</button>
+      <button type="submit" name="submit" class="card-confirm btn-primary">Confirm</button>
     </form>
 
     <article class="thanks">
@@ -70,6 +70,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://santiagolarae.github.io">SantiLara</a>.
   </footer>
+  <script src="./src/index.js"></script>
 </body>
 
 </html>
