@@ -59,7 +59,6 @@ const updateCardInfo = (input) => {
 const validateInput = (e) => {
   const input = e.target;
   const invalidKeys = ["e", "E", "-", ".", "+"];
-  console.log(input)
 
   const min = input.dataset.min;
   const max = input.dataset.max;
